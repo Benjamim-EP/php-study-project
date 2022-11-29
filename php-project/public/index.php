@@ -4,7 +4,9 @@ require 'bootstrap.php';
 try{
     $data= router();
 
-    extract($data['data']);
+    if(!isset($data['data'])){
+        throw new Exception('O indice data está faltando');
+    }
 
     if(!isset($data['view'])){
         throw new Exception('O indice view está faltando');
@@ -13,8 +15,10 @@ try{
         throw new Exception("Essa view {$data['view']} não existe");
     }
 
+    extract($data['data']);
+
     $view = $data['view'];
-    
+
     require VIEWS.'master.php';
 }catch(Exception $e){
     var_dump($e -> getMessage());
