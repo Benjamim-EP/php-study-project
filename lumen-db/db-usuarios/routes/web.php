@@ -1,6 +1,3 @@
 <?php
 
-$router->get('/', function () use ($router) {
-    //return $router->app->version();
-    return 'Home';
-});
+$router->get('/','Home@index');
