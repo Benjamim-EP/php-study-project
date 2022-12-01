@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "set NODE_ENV=development && webpack --progress --watch",
-    "prod": "set NODE_ENV= production webpack --progress --watch" 
+    "prod": "set NODE_ENV= production webpack --progress --watch"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +22,8 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "webpack": "^5.12.3",
     "webpack-cli": "^4.3.1"
+  },
+  "dependencies": {
+    "axios": "^1.2.0"
   }
 }

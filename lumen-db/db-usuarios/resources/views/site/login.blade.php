@@ -2,11 +2,11 @@
 @extends('site.master')
 @section('content')
     <h2>Login</h2>
-
-    <form action="/login" method="post">
+    <div id="errors"></div>
+    <form>
         <input type="text" name="email" value="test@gmail.com">
         <input type="text" name="password" value="123">
-        <button type="submit">Login</button>
+        <button id="btn-login">Login</button>
     </form>
 
     @section('scripts')
