@@ -7,9 +7,8 @@ class Home extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
-        echo $posts;
-        return view('site.home',['title' => 'Home', 'name' => 'Benjamim']);
+        $posts = Post::with('user')->get();
+        return view('site.home',['title' => 'Home', 'posts'=>$posts]);
     }
 }
 ?>
