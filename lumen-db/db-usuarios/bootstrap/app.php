@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -94,7 +94,7 @@ $app->configure('app');
 */
 
 // $app->register(App\Providers\AppServiceProvider::class);
-$app->register(App\Providers\AuthServiceProvider::class);
+//$app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
 /*

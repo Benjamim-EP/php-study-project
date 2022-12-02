@@ -35,9 +35,7 @@ class AuthServiceProvider extends ServiceProvider
                 return User::where('api_token', $request->input('api_token'))->first();
             }
 
-            if(isset($_SESSION['userId'])){
-                return User::where('id',$_SESSION['userId'])->first();
-            }
+          
         });
     }
 }

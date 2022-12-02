@@ -4,7 +4,7 @@
     <h2>Login</h2>
     <div id="errors"></div>
     <form>
-        <input type="text" name="email" value="test@gmail.com">
+        <input type="text" name="email" value="donnelly.maude@yahoo.com">
         <input type="password" name="password" value="123">
         <button id="btn-login">Login</button>
     </form>

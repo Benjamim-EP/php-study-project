@@ -2,7 +2,7 @@ const { default: axios } = require("axios");
 
 const form = document.querySelector("form");
 const btnLogin = document.querySelector("#btn-login");
-const errors = document.querySelector("#errors");
+const messages = document.querySelector("#messages");
 
 btnLogin.addEventListener("click", async function(event){
     event.preventDefault();
@@ -10,6 +10,9 @@ btnLogin.addEventListener("click", async function(event){
     try{
         const formData = new FormData(form);
         const {data} = await axios.post("/login",formData);
+        messages.innerHTML = `
+            <div class="sucess">${data.messages}</div>
+        `
     } catch (error){
         const errorsValidate = error.response?.data;
         console.log(errorsValidate);
@@ -17,13 +20,13 @@ btnLogin.addEventListener("click", async function(event){
         if(errorsValidate){
             for(const index in errorsValidate){
                 if (errorsValidate.hasOwnProperty(index)){
-                    errors.innerHTML += `
+                    messages.innerHTML += `
                         <div class="error">${errorsValidate[index]}</div>
                     `;
                 }
 
                 setTimeout(() =>{
-                    errors.innerHTML = "";
+                    messages.innerHTML = "";
                 },3000);
             }
         }
