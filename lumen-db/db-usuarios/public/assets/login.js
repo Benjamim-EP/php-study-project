@@ -12,6 +12,7 @@ btnLogin.addEventListener("click", async function(event){
         const {data} = await axios.post("/login",formData);
     } catch (error){
         const errorsValidate = error.response?.data;
+        console.log(errorsValidate);
 
         if(errorsValidate){
             for(const index in errorsValidate){

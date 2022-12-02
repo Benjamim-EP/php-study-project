@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class Login extends Controller
@@ -17,5 +16,11 @@ class Login extends Controller
             'password'=> 'required'
         
         ]);
+
+        $user = User::where('email',$request->input('email')->first());
+
+        if(!user){
+            return response()->json(['message'=>'Ocorreu um erro'],401);
+        }
     }
 }

@@ -5,7 +5,7 @@
     <div id="errors"></div>
     <form>
         <input type="text" name="email" value="test@gmail.com">
-        <input type="text" name="password" value="123">
+        <input type="password" name="password" value="123">
         <button id="btn-login">Login</button>
     </form>
 
