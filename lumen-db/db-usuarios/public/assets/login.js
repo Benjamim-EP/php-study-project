@@ -11,11 +11,11 @@ btnLogin.addEventListener("click", async function(event){
         const formData = new FormData(form);
         const {data} = await axios.post("/login",formData);
         messages.innerHTML = `
-            <div class="sucess">${data.messages}</div>
+            <div class="sucess">${data.message}</div>
         `
     } catch (error){
         const errorsValidate = error.response?.data;
-        console.log(errorsValidate);
+        //console.log(errorsValidate);
 
         if(errorsValidate){
             for(const index in errorsValidate){
