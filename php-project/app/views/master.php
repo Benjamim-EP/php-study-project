@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<h1><?php echo $name; ?></h1>
-<div class="container">
-    <?php require VIEWS.$view; ?>
-</div>
+    <div id="header">
+        <?php require 'partials/header.php' ?>
+    </div>
+    <div class="container">
+        <?php require VIEWS.$view; ?>
+    </div>
 </body>
 </html>
