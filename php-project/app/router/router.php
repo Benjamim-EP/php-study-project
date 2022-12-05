@@ -1,14 +1,8 @@
 <?php
-function routes() // onde vai o array de todas as rotas do sistema 
-{
-    return require 'routes.php';
-} 
+
 
 function exactMatchUriInArrayRoutes($uri, $routes){
-    if(array_key_exists($uri,$routes)){
-        return [$uri => $routes[$uri]];
-    }
-    return [];
+    return (array_key_exists($uri, $routes))? [$uri => $routes[$uri]] : [];
 }
 
 function regularExpressionMatchArrayRoutes($uri, $routes)
@@ -46,7 +40,7 @@ function paramsFormat($uri, $params){
 function router()
 {
     $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $routes = routes();
+    $routes = require 'routes.php';
 
     $matchedUri = exactMatchUriInArrayRoutes($uri, $routes);
 
