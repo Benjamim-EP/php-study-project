@@ -8,6 +8,11 @@ try{
         throw new Exception('O indice data está faltando');
     }
 
+    
+    if(!isset($data['data']['title'])){
+        throw new Exception('O indice title está faltando');
+    }
+
     if(!isset($data['view'])){
         throw new Exception('O indice view está faltando');
     }
