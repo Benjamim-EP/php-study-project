@@ -9,4 +9,9 @@ class login
             'data' => ['title' => 'Login']
         ];
     }
+
+    public function store(){
+        var_dump('login');
+        die();
+    }
 }
